@@ -1,0 +1,27 @@
+.header{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    border-bottom: 1.5px solid whitesmoke;
+    z-index: 10;
+    position: fixed;
+    width: 100%;
+    background-color: #062f4f;
+}
+
+h4{
+    font-size: 2rem;
+    padding: 0px 5rem;
+    margin: 2rem 1.8rem;
+    width: 60%;
+}
+
+a{
+    text-decoration: none;
+    color: whitesmoke;
+    font-weight: bold;
+    border: 2px solid whitesmoke;
+    padding: 1rem;
+    border-radius: 10px;
+    margin: 0px 1.5rem;
+}
