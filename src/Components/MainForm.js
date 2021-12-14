@@ -38,7 +38,7 @@ const MainForm = () => {
 
             if (!response.ok) {
                 throw new Error(
-                    "Something went wrong, please make sure you are connected to internet"
+                    "Something went wrong, make sure you entered the correct name of the city"
                 );
             }
 
