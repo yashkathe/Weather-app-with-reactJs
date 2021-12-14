@@ -5,19 +5,27 @@ import { Route, Switch } from "react-router-dom";
 import Settings from "./Components/Settings";
 import NotFound from "./UI/NotFound";
 
+import UnitContext from "./Store/UnitContext";
+
 function App() {
     return (
         <Switch>
             <Route path='/' exact>
-                <Header />
-                <MainForm />
+                <UnitContext.Provider value={{}}> 
+                    <Header />
+                </UnitContext.Provider>
+                <UnitContext.Provider value={{}}> 
+                    <MainForm />
+                </UnitContext.Provider>
             </Route>
             <Route path='/settings'>
-                <Header/>
-                <Settings />
+                <Header />
+                <UnitContext.Provider value={{}}> 
+                    <Settings />
+                </UnitContext.Provider>
             </Route>
-            <Route path='*'> 
-              <NotFound/>
+            <Route path='*'>
+                <NotFound />
             </Route>
         </Switch>
     );

@@ -1,11 +1,13 @@
 import React, { useRef, useState } from "react";
 import Spinner from "../UI/Spinner";
+
 // import MoreInfo from "./MoreInfo";
 
-import styles from "./MainForm.module.css";
-import {motion} from "framer-motion";
+import StartingForm from "./StartingForm";
+import ErrorCondition from "./ErrorCondition";
+import RenderedInfo from "./RenderedInfo";
 
-const MainForm = () => {
+const MainForm = (props) => {
     const hover = {
         scale: 1.4,
         borderColor: "rgb(255, 215, 0)",
@@ -80,57 +82,37 @@ const MainForm = () => {
 
     return (
         <React.Fragment>
+            {/* condition one - Home Page*/}
+
             {dataReceived === false && loading === false && error === null && (
-                <div className={styles.main}>
-                    <form className={styles.content} onSubmit={submitHandler}>
-                        <input placeholder='Your city' ref={cityInputRef} />
-                    </form>
-                    <div className={styles.content}>
-                        <h1 className={styles.Name}>
-                            Enter the name of your city
-                        </h1>
-                        <p className={styles.descript}>
-                            Powered by open weather api
-                        </p>
-                    </div>
-                </div>
+                <StartingForm handler={submitHandler} cityref={cityInputRef} />
             )}
+
+            {/* condition two  - Spinner*/}
+
             {dataReceived === false && loading === true && error === null && (
                 <Spinner />
             )}
+
+            {/* condition 3  - Getting some error*/}
+
             {dataReceived === false && loading === false && error && (
-                <div className={styles.content}>
-                    <p className={styles.error}>{error}</p>
-                    <motion.a whileHover={hover} href='/' className={styles.aerror}>
-                        reload site
-                    </motion.a>
-                </div>
+                <ErrorCondition hover={hover} error={error} />
             )}
+
+            {/* condition 4  - Successfully retrived the data */}
+
             {dataReceived === true && loading === false && error === null && (
-                <div className={styles.main}>
-                    <div className={styles.content}>
-                        <form
-                            className={styles.content}
-                            onSubmit={submitHandler}
-                        >
-                            <input placeholder='Your city' ref={cityInputRef} />
-                        </form>
-                        <h1 className={styles.Name}>
-                            {country[0]}, {country[1]}
-                        </h1>
-                        <h1 className={styles.MainTemp}>
-                            {temperature[0].temperature.toFixed(2)}°
-                        </h1>
-                        <div className={styles.descript}>
-                            <h2>{description[0]}</h2>
-                            <h5>
-                                {temperature[0].temp_max.toFixed(2)}/
-                                {temperature[0].temp_min.toFixed(2)}
-                            </h5>
-                        </div>
-                    </div>
-                    {/* <MoreInfo/> */}
-                </div>
+                <RenderedInfo
+                    submit={submitHandler}
+                    cityref={cityInputRef}
+                    city={country[0]}
+                    country={country[1]}
+                    temperature={temperature[0].temperature.toFixed(2)}
+                    description={description[0]}
+                    maxTemp={temperature[0].temp_max.toFixed(2)}
+                    minTemp={temperature[0].temp_min.toFixed(2)}
+                />
             )}
         </React.Fragment>
     );

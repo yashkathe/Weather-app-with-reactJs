@@ -1,7 +1,7 @@
 import React from "react";
 import classes from "./Header.module.css";
 import { motion } from "framer-motion";
-import { Link } from "react-router-dom";
+import { Link , NavLink } from "react-router-dom";
 
 const Header = () => {
     const hover = {
@@ -33,11 +33,11 @@ const Header = () => {
                     >
                         Source Code
                     </motion.a>
-                    <Link to='/settings'>
+                    <NavLink to='/settings' activeClassName={classes.active}>
                         <motion.div whileHover={hover}>
                             <button>Settings</button>
                         </motion.div>
-                    </Link>
+                    </NavLink>
                 </div>
             </div>
         </React.Fragment>
