@@ -1,4 +1,4 @@
-import React, { useRef, useState } from "react";
+import React, { useRef, useState} from "react";
 import Spinner from "../UI/Spinner";
 
 // import MoreInfo from "./MoreInfo";
@@ -7,12 +7,10 @@ import StartingForm from "./StartingForm";
 import ErrorCondition from "./ErrorCondition";
 import RenderedInfo from "./RenderedInfo";
 
-const MainForm = (props) => {
-    const hover = {
-        scale: 1.4,
-        borderColor: "rgb(255, 215, 0)",
-        color: "rgb(255, 215, 0)",
-    };
+import styles from './MainForm.module.css'
+
+const MainForm = () => {
+
 
     const cityInputRef = useRef();
 
@@ -82,6 +80,8 @@ const MainForm = (props) => {
 
     return (
         <React.Fragment>
+            <div className={styles.backgroundd}>
+            </div>
             {/* condition one - Home Page*/}
 
             {dataReceived === false && loading === false && error === null && (
@@ -97,7 +97,7 @@ const MainForm = (props) => {
             {/* condition 3  - Getting some error*/}
 
             {dataReceived === false && loading === false && error && (
-                <ErrorCondition hover={hover} error={error} />
+                <ErrorCondition error={error} />
             )}
 
             {/* condition 4  - Successfully retrived the data */}
@@ -113,6 +113,7 @@ const MainForm = (props) => {
                     maxTemp={temperature[0].temp_max.toFixed(2)}
                     minTemp={temperature[0].temp_min.toFixed(2)}
                 />
+                
             )}
         </React.Fragment>
     );

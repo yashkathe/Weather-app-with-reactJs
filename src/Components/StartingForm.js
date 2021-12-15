@@ -1,19 +1,26 @@
 import React from "react";
 
 import styles from "./MainForm.module.css";
+import {motion} from 'framer-motion';
 
 const StartingForm = (props) => {
     return (
         <React.Fragment>
             <div className={styles.main}>
                 <form className={styles.content} onSubmit={props.handler}>
-                    <input placeholder='Your city' ref={props.cityref} />
+                    <input placeholder='Your city' ref={props.cityref} className={styles.mainInput}/>
                 </form>
                 <div className={styles.content}>
                     <h1 className={styles.Name}>Enter the name of your city</h1>
-                    <p className={styles.descript}>
-                        Powered by open weather api
-                    </p>
+                    <motion.p className={styles.descript} animate={{
+                        scale: [1.1,1,1.1,1,1.1],
+                        transition:{
+                            duration:10,
+                            repeat:Infinity
+                        }
+                    }}>
+                        Powered by - open weather api
+                    </motion.p>
                 </div>
             </div>
         </React.Fragment>

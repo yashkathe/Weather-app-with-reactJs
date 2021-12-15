@@ -1,10 +1,9 @@
 import React, { useState } from "react";
-import UnitContext from "../Store/UnitContext";
 
 import classes from "./Settings.module.css";
 
 const Settings = () => {
-    let [isDCelsius, setIsDCelsius] = useState(true);
+    let [isdCelsius, setIsDCelsius] = useState(true);
     let [isFarenhit, setIsFarenhit] = useState(false);
 
     const degreeChangeHandler = () => {
@@ -21,39 +20,45 @@ const Settings = () => {
         event.preventDefault();
     };
 
+    console.log(isdCelsius, "celsius");
+    console.log(isFarenhit, "farenhite");
+
     return (
         <React.Fragment>
-            <UnitContext.Provider value={{ isDCelsius: isDCelsius}}>
-                {console.log(isDCelsius)}
-                <div className={classes.blur}></div>
-                <div className={classes.main}>
-                    <h2 className={classes.header}>Settings</h2>
-                    <h4>Unit for temperature</h4>
-                    <form
-                        className={classes.settingForm}
-                        onSubmit={submitHandler}
-                    >
-                        <div>
-                            <label htmlFor='degree'>Degree Celsius</label>
-                            <input
-                                type='radio'
-                                name='tempUnit'
-                                checked={isDCelsius}
-                                onChange={degreeChangeHandler}
-                            />
-                        </div>
-                        <div>
-                            <label htmlFor='farenhit'>Farenhit</label>
-                            <input
-                                type='radio'
-                                name='tempUnit'
-                                checked={isFarenhit}
-                                onChange={farenhitChangeHandler}
-                            />
-                        </div>
-                    </form>
+            {/* background div  */}
+
+            <div className={classes.backgroundd}></div>
+            <div className={classes.blur}></div>
+
+            {/* main component  */}
+
+            <div className={classes.main}>
+                <div className={classes.title}>
+                    <h2 className={classes.header}>Settings </h2> <h2>⚙️</h2>
                 </div>
-            </UnitContext.Provider>
+
+                <h4>Unit for temperature</h4>
+                <form className={classes.settingForm} onSubmit={submitHandler}>
+                    <div>
+                        <label htmlFor='degree'>Degree Celsius</label>
+                        <input
+                            type='radio'
+                            name='tempUnit'
+                            checked={isdCelsius}
+                            onChange={degreeChangeHandler}
+                        />
+                    </div>
+                    <div>
+                        <label htmlFor='farenhit'>Farenhit</label>
+                        <input
+                            type='radio'
+                            name='tempUnit'
+                            checked={isFarenhit}
+                            onChange={farenhitChangeHandler}
+                        />
+                    </div>
+                </form>
+            </div>
         </React.Fragment>
     );
 };

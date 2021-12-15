@@ -1,7 +1,7 @@
 import React from "react";
 import classes from "./Header.module.css";
 import { motion } from "framer-motion";
-import { Link , NavLink } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 
 const Header = () => {
     const hover = {
