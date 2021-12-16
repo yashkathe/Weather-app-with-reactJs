@@ -1,27 +1,37 @@
 import React, { useState } from "react";
 
+import { useSelector, useDispatch } from "react-redux";
+
 import classes from "./Settings.module.css";
 
 const Settings = () => {
-    let [isdCelsius, setIsDCelsius] = useState(true);
-    let [isFarenhit, setIsFarenhit] = useState(false);
+    //redux requisitives
+
+    const unit = useSelector((state) => state.isDCelsius);
+    const dispatch = useDispatch();
+
+    //component level state + redux data
+
+    const [isdCelsius, setIsDCelsius] = useState(unit);
+    const [isfarenheit, setIsFarenheit] = useState(!unit);
+
+    //change handlers + redux data
 
     const degreeChangeHandler = () => {
         setIsDCelsius(true);
-        setIsFarenhit(false);
+        setIsFarenheit(false);
+        dispatch({ type: "celsius", unitBool: true });
     };
 
     const farenhitChangeHandler = () => {
         setIsDCelsius(false);
-        setIsFarenhit(true);
+        setIsFarenheit(true);
+        dispatch({ type: "celsius", unitBool: false });
     };
 
     const submitHandler = (event) => {
         event.preventDefault();
     };
-
-    console.log(isdCelsius, "celsius");
-    console.log(isFarenhit, "farenhite");
 
     return (
         <React.Fragment>
@@ -38,6 +48,9 @@ const Settings = () => {
                 </div>
 
                 <h4>Unit for temperature</h4>
+
+                {/* radio form for unit selection  */}
+
                 <form className={classes.settingForm} onSubmit={submitHandler}>
                     <div>
                         <label htmlFor='degree'>Degree Celsius</label>
@@ -53,7 +66,7 @@ const Settings = () => {
                         <input
                             type='radio'
                             name='tempUnit'
-                            checked={isFarenhit}
+                            checked={isfarenheit}
                             onChange={farenhitChangeHandler}
                         />
                     </div>
