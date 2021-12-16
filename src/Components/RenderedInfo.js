@@ -2,7 +2,11 @@ import React from "react";
 
 import styles from "./MainForm.module.css";
 
+import { useSelector } from "react-redux";
+
 const RenderedInfo = (props) => {
+    const isCelsius = useSelector((state) => state.isDCelsius);
+
     return (
         <React.Fragment>
             <div className={styles.main}>
@@ -17,13 +21,28 @@ const RenderedInfo = (props) => {
                     <h1 className={styles.Name}>
                         {props.city}, {props.country}
                     </h1>
-                    <h1 className={styles.MainTemp}>{props.temperature}°</h1>
+                    {isCelsius === true && (
+                        <h1 className={styles.MainTemp}>
+                            {props.temperature}°
+                        </h1>
+                    )}
+                    {isCelsius === false && (
+                        <h1 className={styles.MainTemp}>
+                            {props.temperatureF} F
+                        </h1>
+                    )}
                     <div className={styles.descript}>
                         <h2>{props.description}</h2>
-                        <h5>
-                            {props.maxTemp}°/
-                            {props.minTemp}°
-                        </h5>
+                        {isCelsius === true && (
+                            <h5>
+                                {props.maxTemp}° / {props.minTemp}°
+                            </h5>
+                        )}
+                        {isCelsius === false && (
+                            <h5>
+                                {props.maxTempF} F / {props.minTempF} F
+                            </h5>
+                        )}
                     </div>
                 </div>
             </div>

@@ -5,6 +5,9 @@
     justify-content: center;
     width: 100%;
     text-align: center;
+    background-color: rgba(0,0,0,0.8);
+    height: 100vh;
+    width: 100vw;
 }
 
 .error {
@@ -17,9 +20,6 @@
     align-items: center;
     justify-content: center;
     padding-right: 3.5rem;
-    margin-top: 45vh;
-    padding-left: 9rem ;
-    padding-right: 9rem;
 }
 
 .aerror{
