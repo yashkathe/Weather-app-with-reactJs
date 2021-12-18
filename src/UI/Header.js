@@ -30,7 +30,7 @@ const Header = () => {
                 </div>
                 <div className={classes.div2}>
                     <motion.a
-                        href='https://github.com/yashkathe/Weather-app-with-reactJs/blob/master/src/App.css'
+                    href='https://github.com/yashkathe/Weather-app-with-reactJs'
                         whileHover={hover}
                         rel='noreferrer noopener'
                         target='_blank'

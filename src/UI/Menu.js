@@ -28,7 +28,7 @@ const Menu = () => {
                     </div>
                 </NavLink>
                 <a
-                    href='https://github.com/yashkathe/Weather-app-with-reactJs/blob/master/src/App.css'
+                    href='https://github.com/yashkathe/Weather-app-with-reactJs'
                     rel='noreferrer noopener'
                     target='_blank'
                 >
