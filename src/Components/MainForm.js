@@ -1,7 +1,6 @@
 import React, { useRef, useState } from "react";
 import Spinner from "../UI/Spinner";
 
-
 // import MoreInfo from "./MoreInfo";
 
 import StartingForm from "./StartingForm";

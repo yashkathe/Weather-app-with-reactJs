@@ -2,6 +2,7 @@ import React from "react";
 import classes from "./Header.module.css";
 import { motion } from "framer-motion";
 import { Link, NavLink } from "react-router-dom";
+import Menu from "./Menu";
 
 const Header = () => {
     const hover = {
@@ -13,6 +14,9 @@ const Header = () => {
     return (
         <React.Fragment>
             <div className={classes.header}>
+                <div className={classes.div0}>
+                    <Menu />
+                </div>
                 <div className={classes.div1}>
                     <Link to='/'>
                         <motion.button
