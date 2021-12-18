@@ -1,0 +1,47 @@
+.HMenu{
+    width: 2.7rem;
+    height:4px;
+    background-color: white;
+    margin-bottom: 10px;
+    margin-left: 1rem;
+    border-radius: 0px 4px 0px 4px;
+    z-index: 15;
+    position: relative;
+}
+
+.navBar{
+display: none;
+}
+
+.navBarClicked{
+    height: 100vh;
+    z-index: 13;
+    width: 50vw;
+    position: absolute;
+    left: 0;
+    top: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: rgba(6,47,79,1);
+}
+
+.backDrop{
+    display: none;
+}
+
+.backDropClicked{
+    z-index: 12;
+    background-color: rgba(0,0,0,0.8);
+    position: fixed;
+    height: 100vh;
+    width: 100vw;
+    left: 0;
+    top: 0;
+}
+
+a.active {
+    font-size: 2.2rem;
+    border-bottom: 3px solid rgb(255, 215, 0);
+}
