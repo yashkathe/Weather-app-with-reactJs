@@ -2,6 +2,17 @@
     margin-top: 200px;
 }
 
+@media (max-width: 34rem) {
+    .main {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        height: 100vh;
+        margin-top: 0;
+    }
+}
+
 input {
     border: none;
     outline: none;
@@ -15,6 +26,34 @@ input {
     width: 25rem;
     padding: 10px 15px;
     font-size: 20px;
+}
+
+@media (max-width: 34rem) {
+    .mainInput {
+        width: 20rem;
+    }
+}
+
+@media (max-width: 26rem) {
+    .mainInput {
+        width: 15rem;
+    }
+}
+
+.mainInput:focus {
+    width: 30rem;
+}
+
+@media (max-width: 34rem) {
+    .mainInput:focus {
+        width: 23rem;
+    }
+}
+
+@media (max-width: 26rem) {
+    .mainInput:focus {
+        width: 18rem;
+    }
 }
 
 .content {
@@ -33,6 +72,61 @@ input {
     margin: 40px 0px;
 }
 
+@media (max-width: 46rem) {
+    .Name {
+        font-size: 50px;
+        text-shadow: 0.5px 0.5px rgb(220, 220, 220);
+    }
+}
+
+@media (max-width: 36rem) {
+    .Name {
+        font-size: 35px;
+        text-shadow: 0px 0px;
+        color: #062f4f;
+    }
+}
+
+@media (max-width: 26rem) {
+    .Name {
+        font-size: 25px;
+        text-shadow: 0px 0px;
+        color: #062f4f;
+    }
+}
+
+/* ------  */
+
+.Name2 {
+    color: #062f4f;
+    text-shadow: 1px 4px rgb(169, 169, 169);
+    font-size: 60px;
+    margin: 40px 0px;
+}
+
+@media (max-width: 46rem) {
+    .Name2 {
+        font-size: 50px;
+        text-shadow: 0.5px 0.5px rgb(220, 220, 220);
+    }
+}
+
+@media (max-width: 36rem) {
+    .Name2 {
+        font-size: 35px;
+        text-shadow: 0px 0px;
+        color: rgb(211,211,211);
+    }
+}
+
+@media (max-width: 26rem) {
+    .Name2 {
+        font-size: 25px;
+        text-shadow: 0px 0px;
+        color: rgb(211,211,211);
+    }
+}
+
 .MainTemp {
     color: rgb(211, 211, 211);
     font-size: 130px;
@@ -41,6 +135,25 @@ input {
     display: flex;
     align-items: center;
     justify-content: center;
+}
+
+@media (max-width: 46rem) {
+    .MainTemp {
+        font-size: 110px;
+    }
+}
+
+@media (max-width: 36rem) {
+    .MainTemp {
+        font-size: 100px;
+    }
+}
+
+@media (max-width: 26rem) {
+    .MainTemp {
+        font-size: 90px;
+        margin: 10px 0px;
+    }
 }
 
 .descript {
@@ -52,11 +165,28 @@ input {
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    padding-right: 3.5rem;
 }
 
 .descript h5 {
     margin: 0px;
+}
+
+@media (max-width: 46rem) {
+    .descript {
+        font-size: 35px;
+    }
+}
+
+@media (max-width: 36rem) {
+    .descript {
+        font-size: 25px;
+    }
+}
+
+@media (max-width: 26rem) {
+    .descript {
+        font-size: 20px;
+    }
 }
 
 .error {
@@ -72,6 +202,31 @@ input {
     margin-top: 45vh;
     padding-left: 9rem;
     padding-right: 9rem;
+}
+
+@media (max-width: 46rem) {
+    .error {
+        font-size: 40px;
+        padding:10px
+    }
+}
+
+@media (max-width: 46rem) {
+    .error {
+        font-size: 35px;
+    }
+}
+
+@media (max-width: 36rem) {
+    .error {
+        font-size: 25px;
+    }
+}
+
+@media (max-width: 26rem) {
+    .error {
+        font-size: 20px;
+    }
 }
 
 .aerror {
@@ -97,4 +252,22 @@ input {
     top: 0;
     height: 100vh;
     width: 100vw;
+}
+
+@media (max-width: 55rem) {
+    .blur {
+        position: fixed;
+        left: 0;
+        top: 0;
+        height: 100vh;
+        width: 100vw;
+        background-color: rgba(0, 0, 0, 0.2);
+        z-index: -1;
+    }
+}
+
+@media (max-width: 36rem) {
+    .blur {
+        background-color: rgba(0, 0, 0, 0.5);
+    }
 }
