@@ -1,0 +1,124 @@
+@media (max-width: 55rem) {
+    .blur {
+        position: fixed;
+        left: 0;
+        top: 0;
+        height: 100vh;
+        width: 100vw;
+        background-color: rgba(0, 0, 0, 0.2);
+        z-index: -1;
+    }
+}
+
+@media (max-width: 36rem) {
+    .blur {
+        background-color: rgba(0, 0, 0, 0.5);
+    }}
+
+    .main {
+        margin-top: 200px;
+    }
+    
+    @media (max-width: 34rem) {
+        .main {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            margin-top: 0;
+        }
+    }
+
+    .content {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+        text-align: center;
+    }
+    
+    input {
+        border: none;
+        outline: none;
+        background-color: rgba(255, 255, 255, 0.5);
+        border-radius: 18px 0px 18px 0px;
+        border-bottom: 2px solid #062f4f;
+    }
+    
+    .mainInput {
+        height: 2.5rem;
+        width: 25rem;
+        padding: 10px 15px;
+        font-size: 20px;
+    }
+    
+    @media (max-width: 34rem) {
+        .mainInput {
+            width: 20rem;
+        }
+    }
+    
+    @media (max-width: 26rem) {
+        .mainInput {
+            width: 15rem;
+        }
+    }
+    
+    .mainInput:focus {
+        width: 30rem;
+    }
+    
+    @media (max-width: 34rem) {
+        .mainInput:focus {
+            width: 23rem;
+        }
+    }
+    
+    @media (max-width: 26rem) {
+        .mainInput:focus {
+            width: 18rem;
+        }
+    }
+
+    .descript {
+        color: rgb(211, 211, 211);
+        font-size: 45px;
+        font-weight: 700;
+        font-style: italic;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .Name2 {
+        color: #062f4f;
+        text-shadow: 1px 4px rgb(169, 169, 169);
+        font-size: 60px;
+        margin: 40px 0px;
+    }
+    
+    @media (max-width: 46rem) {
+        .Name2 {
+            font-size: 50px;
+            text-shadow: 0.5px 0.5px rgb(220, 220, 220);
+        }
+    }
+    
+    @media (max-width: 36rem) {
+        .Name2 {
+            font-size: 35px;
+            text-shadow: 0px 0px;
+            color: rgb(211,211,211);
+        }
+    }
+    
+    @media (max-width: 26rem) {
+        .Name2 {
+            font-size: 25px;
+            text-shadow: 0px 0px;
+            color: rgb(211,211,211);
+        }
+    }

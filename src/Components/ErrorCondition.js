@@ -1,6 +1,6 @@
 import React from "react";
 
-import styles from "./MainForm.module.css";
+import styles from "./ErrorCondition.module.css";
 import { motion } from "framer-motion";
 
 const ErrorCondition = (props) => {

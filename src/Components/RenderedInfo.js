@@ -1,6 +1,6 @@
 import React from "react";
 
-import styles from "./MainForm.module.css";
+import styles from "./RenderedInfo.module.css";
 
 import { useSelector } from "react-redux";
 

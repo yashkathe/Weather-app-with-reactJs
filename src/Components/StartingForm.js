@@ -1,6 +1,6 @@
 import React from "react";
 
-import styles from "./MainForm.module.css";
+import styles from "./StartingForm.module.css";
 import { motion } from "framer-motion";
 
 const StartingForm = (props) => {
