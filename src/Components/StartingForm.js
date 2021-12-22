@@ -4,15 +4,20 @@ import styles from "./StartingForm.module.css";
 import { motion } from "framer-motion";
 
 const StartingForm = (props) => {
+
     return (
         <React.Fragment>
             <div className={styles.blur}></div>
             <div className={styles.main}>
                 <form className={styles.content} onSubmit={props.handler}>
-                    <input
+                    <motion.input
                         placeholder='Your city'
                         ref={props.cityref}
                         className={styles.mainInput}
+                        whileFocus={{scale:1.18, transition:{
+                            type:'spring',
+                            stiffness:300,
+                        }}}
                     />
                 </form>
                 <div className={styles.content}>

@@ -49,22 +49,6 @@ input {
     }
 }
 
-.mainInput:focus {
-    width: 30rem;
-}
-
-@media (max-width: 34rem) {
-    .mainInput:focus {
-        width: 23rem;
-    }
-}
-
-@media (max-width: 26rem) {
-    .mainInput:focus {
-        width: 18rem;
-    }
-}
-
 .descript {
     color: rgb(211, 211, 211);
     font-size: 45px;
