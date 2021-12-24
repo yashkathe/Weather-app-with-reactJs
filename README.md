@@ -14,7 +14,7 @@ Powered by [Open Weather API](https://openweathermap.org/api)
 
 ## Screenshots
 
--Default Page
+- Default Page
 
 ![ Home Page ](https://raw.githubusercontent.com/yashkathe/Weather-app-with-reactJs/master/src/Assets/Screenshots/Search.gif "Search")
 
