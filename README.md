@@ -1,8 +1,33 @@
-# Getting Started with Create React App
+# Weather App with React Js
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Access current weather data for any location including over 200,000 cities 
 
-## Available Scripts
+Powered by [Open Weather API](https://openweathermap.org/api)
+
+
+## Libraries Used 
+
+ - [React Redux](https://www.framer.com/motion/)
+ - [Framer Motion](https://react-redux.js.org/)
+  - [React Router v5](https://reactrouter.com/)
+
+
+## Screenshots
+
+-Default Page
+
+![ Home Page ](https://raw.githubusercontent.com/yashkathe/Weather-app-with-reactJs/master/src/Assets/Screenshots/Search.gif "Search")
+
+- Optimised for mobile 
+
+![ Phone View ](https://raw.githubusercontent.com/yashkathe/Weather-app-with-reactJs/master/src/Assets/Screenshots/mobileView.gif "Mobile View")
+
+
+
+
+## Running this app on your machine
+
+### Available Scripts
 
 In the project directory, you can run:
 
@@ -44,27 +69,3 @@ You don’t have to ever use `eject`. The curated feature set is suitable for sm
 You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
 
 To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
