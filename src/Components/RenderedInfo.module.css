@@ -31,10 +31,11 @@ input {
 }
 
 .mainInput {
-    height: 2.5rem;
+    height: 3.5rem;
     width: 25rem;
     padding: 10px 15px;
     font-size: 20px;
+    box-sizing: border-box;
 }
 
 @media (max-width: 34rem) {
@@ -49,20 +50,29 @@ input {
     }
 }
 
-.mainInput:focus {
-    width: 30rem;
+.formDiv {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: auto;
+    display: inline-block;
 }
 
-@media (max-width: 34rem) {
-    .mainInput:focus {
-        width: 23rem;
-    }
+.searchButton {
+    position: absolute;
+    top: 6%;
+    right: 5%;
+    opacity: 0;
+    transition: 400ms;
 }
 
-@media (max-width: 26rem) {
-    .mainInput:focus {
-        width: 18rem;
-    }
+.mainInput:focus + .searchButton {
+    opacity: 1;
+    top: 6%;
+    right: -5%;
+    transition: 800ms;
 }
 
 .Name {

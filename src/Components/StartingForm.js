@@ -3,35 +3,46 @@ import React from "react";
 import styles from "./StartingForm.module.css";
 import { motion } from "framer-motion";
 
-const StartingForm = (props) => {
+import searchIcon from "../Assets/Icons/search-48.png";
 
+const inputVarients = {
+    onFocus: {
+        scale: 1.18,
+        transition: {
+            type: "tween",
+            stiffness: 300,
+            duration: 0.6,
+        },
+    },
+};
+
+const StartingForm = (props) => {
     return (
         <React.Fragment>
             <div className={styles.blur}></div>
             <div className={styles.main}>
-                <form className={styles.content} onSubmit={props.handler}>
-                    <motion.input
-                        placeholder='Your city'
-                        ref={props.cityref}
-                        className={styles.mainInput}
-                        whileFocus={{scale:1.18, transition:{
-                            type:'spring',
-                            stiffness:300,
-                        }}}
-                    />
-                </form>
+                <div className={styles.formDiv}>
+                    <form className={styles.content} onSubmit={props.handler}>
+                        <motion.input
+                            placeholder='Your city'
+                            ref={props.cityref}
+                            className={styles.mainInput}
+                            variants={inputVarients}
+                            whileFocus='onFocus'
+                        />
+                        <button
+                            className={styles.searchButton}
+                            onClick={props.handler}
+                        >
+                            <img src={searchIcon} alt='search icon' />
+                        </button>
+                    </form>
+                </div>
                 <div className={styles.content}>
-                    <h1 className={styles.Name2}>Enter the name of your city</h1>
-                    <motion.p
-                        className={styles.descript}
-                        animate={{
-                            scale: [1.1, 1, 1.1, 1, 1.1],
-                            transition: {
-                                duration: 10,
-                                repeat: Infinity,
-                            },
-                        }}
-                    >
+                    <h1 className={styles.Name2}>
+                        Enter the name of your city
+                    </h1>
+                    <motion.p className={styles.descript}>
                         Powered by - open weather api
                     </motion.p>
                 </div>

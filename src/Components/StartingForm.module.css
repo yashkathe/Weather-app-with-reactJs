@@ -1,5 +1,17 @@
 .main {
     margin-top: 200px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.mainInput {
+    height: 3.5rem;
+    width: 25rem;
+    padding: 10px 15px;
+    font-size: 20px;
+    box-sizing: border-box;
 }
 
 @media (max-width: 34rem) {
@@ -11,6 +23,31 @@
         height: 100vh;
         margin-top: 0;
     }
+}
+
+.formDiv {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: auto;
+    display: inline-block;
+}
+
+.searchButton {
+    position: absolute;
+    top: 6%;
+    right: 5%;
+    opacity: 0;
+    transition: 400ms;
+}
+
+.mainInput:focus + .searchButton {
+    opacity: 1;
+    top: 6%;
+    right: -5%;
+    transition: 800ms;
 }
 
 .content {
@@ -30,13 +67,6 @@ input {
     border-bottom: 2px solid #062f4f;
 }
 
-.mainInput {
-    height: 2.5rem;
-    width: 25rem;
-    padding: 10px 15px;
-    font-size: 20px;
-}
-
 @media (max-width: 34rem) {
     .mainInput {
         width: 20rem;
@@ -51,7 +81,7 @@ input {
 
 .descript {
     color: rgb(211, 211, 211);
-    font-size: 45px;
+    font-size: 38px;
     font-weight: 700;
     font-style: italic;
     display: flex;
