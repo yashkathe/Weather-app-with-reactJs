@@ -43,14 +43,82 @@ const Menu = () => {
         },
     };
 
+    const hamBurger1 = {
+        animate: {
+            rotate: -45,
+            position:"absolute",
+            originX: '72%',
+            transition: {
+                type: "tween",
+                duration: 0.5,
+                ease:"easeOut"
+            },
+        },
+    };
+
+    const hamBurger1H = {
+        animate:{
+            rotate:0,
+                transition:{
+                    type:"tween",
+                    duration:0.7
+                }
+            }
+    }
+
+    const hamBurger2 = {
+        animate: {
+            x: "-50vw",
+            opacity:0,
+            transition: {
+                type: "tween",
+                duration: 0.5,
+            },
+        },
+        preState:{
+            x:0,
+            opacity:1,
+            transition: {
+                type: "tween",
+                duration: 0.5,
+            },
+        }
+    };
+
+    const hamBurger3 = {
+        animate: {
+            rotate: 45,
+            position: "absolute",
+            originX: '72%',
+            transition: {
+                type: "tween",
+                duration: 0.5,
+                ease:"easeOut"
+            }
+        },
+    };
+
     return (
         <React.Fragment>
-            <div onClick={HmenuHandler}>
-                <motion.div className={classes.HMenu}></motion.div>
-                <motion.div className={classes.HMenu}></motion.div>
-                <motion.div className={classes.HMenu}></motion.div>
-            </div>
-
+            <AnimatePresence>
+                <div onClick={HmenuHandler}>
+                    <motion.div
+                        className={classes.HMenu}
+                        variants={showModal === true ? hamBurger1 : hamBurger1H}
+                        animate="animate"
+                    ></motion.div>
+                    <motion.div
+                        className={classes.HMenu}
+                        variants={hamBurger2}
+                        animate={showModal === true ? "animate" : "preState"}
+                    ></motion.div>
+                    <motion.div
+                        className={classes.HMenu}
+                        variants={showModal === true ? hamBurger3 : hamBurger1H}
+                        animate="animate"
+                    ></motion.div>
+                </div>
+            </AnimatePresence>
             <AnimatePresence>
                 {showModal && (
                     <motion.div
@@ -59,7 +127,7 @@ const Menu = () => {
                         initial='initial'
                         animate='animate'
                         exit='initial'
-                    >  
+                    >
                         <NavLink to='/' activeClassName={classes.active} exact>
                             <button>Home</button>
                         </NavLink>
