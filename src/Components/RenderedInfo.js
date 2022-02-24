@@ -1,24 +1,16 @@
-import React from "react";
+import React, {createContext} from "react";
 
 import styles from "./RenderedInfo.module.css";
 import { motion } from "framer-motion";
 
 import { useSelector } from "react-redux";
 import searchIcon from "../Assets/Icons/search-48.png";
+import VarientsContext from "../Store/VarientsContext";
 
 const RenderedInfo = (props) => {
     const isCelsius = useSelector((state) => state.isDCelsius);
 
-    const inputVarients = {
-        onFocus: {
-            scale: 1.18,
-            transition: {
-                type: "tween",
-                stiffness: 300,
-                duration: 0.6,
-            },
-        },
-    };
+    const ctx = createContext(VarientsContext)
 
     return (
         <React.Fragment>
@@ -33,7 +25,7 @@ const RenderedInfo = (props) => {
                                 placeholder='Your city'
                                 ref={props.cityref}
                                 className={styles.mainInput}
-                                variants={inputVarients}
+                                variants={ctx.inputVarients}
                                 whileFocus='onFocus'
                             />
                             <button

@@ -1,19 +1,17 @@
-import React from "react";
+import React, {useContext} from "react";
 
 import styles from "./ErrorCondition.module.css";
 import { motion } from "framer-motion";
+import VarientsContext from "../Store/VarientsContext";
 
 const ErrorCondition = (props) => {
-    const hover = {
-        scale: 1.4,
-        borderColor: "rgb(255, 215, 0)",
-        color: "rgb(255, 215, 0)",
-    };
+    const ctx = useContext(VarientsContext)
+
     return (
         <React.Fragment>
             <div className={styles.content}>
                 <p className={styles.error}>{props.error}</p>
-                <motion.a whileHover={hover} href='/' className={styles.aerror}>
+                <motion.a whileHover={ctx.Hover} href='/' className={styles.aerror}>
                     reload site
                 </motion.a>
             </div>
