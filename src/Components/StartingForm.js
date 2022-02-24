@@ -1,22 +1,14 @@
-import React from "react";
+import React , {useContext} from "react";
 
 import styles from "./StartingForm.module.css";
 import { motion } from "framer-motion";
 
 import searchIcon from "../Assets/Icons/search-48.png";
-
-const inputVarients = {
-    onFocus: {
-        scale: 1.18,
-        transition: {
-            type: "tween",
-            stiffness: 300,
-            duration: 0.6,
-        },
-    },
-};
+import VarientsContext from "../Store/VarientsContext";
 
 const StartingForm = (props) => {
+const ctx = useContext(VarientsContext)
+
     return (
         <React.Fragment>
             <div className={styles.blur}></div>
@@ -27,7 +19,7 @@ const StartingForm = (props) => {
                             placeholder='Your city'
                             ref={props.cityref}
                             className={styles.mainInput}
-                            variants={inputVarients}
+                            variants={ctx.inputVarients}
                             whileFocus='onFocus'
                         />
                         <button

@@ -1,15 +1,12 @@
-import React from "react";
+import React, {useContext} from "react";
 import classes from "./Header.module.css";
 import { motion } from "framer-motion";
 import { Link, NavLink } from "react-router-dom";
 import Menu from "./Menu";
+import VarientsContext from "../Store/VarientsContext";
 
 const Header = () => {
-    const hover = {
-        scale: 1.4,
-        borderColor: "rgb(255, 215, 0)",
-        color: "rgb(255, 215, 0)",
-    };
+    const ctx = useContext(VarientsContext)
 
     return (
         <React.Fragment>
@@ -31,14 +28,14 @@ const Header = () => {
                 <div className={classes.div2}>
                     <motion.a
                     href='https://github.com/yashkathe/Weather-app-with-reactJs'
-                        whileHover={hover}
+                        whileHover={ctx.hover2}
                         rel='noreferrer noopener'
                         target='_blank'
                     >
                         Source Code
                     </motion.a>
                     <NavLink to='/settings' activeClassName={classes.active}>
-                        <motion.div whileHover={hover}>
+                        <motion.div whileHover={ctx.hover2}>
                             <button>Settings</button>
                         </motion.div>
                     </NavLink>

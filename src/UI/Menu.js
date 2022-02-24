@@ -1,102 +1,20 @@
-import React, { useState } from "react";
+import React, { useState, useContext } from "react";
 
 import classes from "./Menu.module.css";
 
 import { NavLink } from "react-router-dom";
 import { motion, AnimatePresence } from "framer-motion";
 
+import VarientsContext from "../Store/VarientsContext";
+
 const Menu = () => {
-    // const [clicked, setIsClicked] = useState(false);
     const [showModal, setShowModal] = useState(false);
 
     const HmenuHandler = () => {
         setShowModal(!showModal);
     };
 
-    const navBarVarients = {
-        initial: {
-            x: "-70vw",
-            transition: {
-                duration: 1,
-            },
-        },
-        animate: {
-            x: "0vw",
-            transition: {
-                duration: 1,
-            },
-        },
-    };
-
-    const backDropVar = {
-        initial: {
-            opacity: 0,
-            transition: {
-                duration: 1,
-            },
-        },
-        animate: {
-            opacity: 1,
-            transition: {
-                duration: 1,
-            },
-        },
-    };
-
-    const hamBurger1 = {
-        animate: {
-            rotate: -45,
-            position:"absolute",
-            originX: '72%',
-            transition: {
-                type: "tween",
-                duration: 0.5,
-                ease:"easeOut"
-            },
-        },
-    };
-
-    const hamBurger1H = {
-        animate:{
-            rotate:0,
-                transition:{
-                    type:"tween",
-                    duration:0.7
-                }
-            }
-    }
-
-    const hamBurger2 = {
-        animate: {
-            x: "-50vw",
-            opacity:0,
-            transition: {
-                type: "tween",
-                duration: 0.5,
-            },
-        },
-        preState:{
-            x:0,
-            opacity:1,
-            transition: {
-                type: "tween",
-                duration: 0.5,
-            },
-        }
-    };
-
-    const hamBurger3 = {
-        animate: {
-            rotate: 45,
-            position: "absolute",
-            originX: '72%',
-            transition: {
-                type: "tween",
-                duration: 0.5,
-                ease:"easeOut"
-            }
-        },
-    };
+    const ctx = useContext(VarientsContext);
 
     return (
         <React.Fragment>
@@ -104,18 +22,26 @@ const Menu = () => {
                 <div onClick={HmenuHandler}>
                     <motion.div
                         className={classes.HMenu}
-                        variants={showModal === true ? hamBurger1 : hamBurger1H}
-                        animate="animate"
+                        variants={
+                            showModal === true
+                                ? ctx.hamBurger1
+                                : ctx.hamBurgerPostAnimate
+                        }
+                        animate='animate'
                     ></motion.div>
                     <motion.div
                         className={classes.HMenu}
-                        variants={hamBurger2}
+                        variants={ctx.hamBurger2}
                         animate={showModal === true ? "animate" : "preState"}
                     ></motion.div>
                     <motion.div
                         className={classes.HMenu}
-                        variants={showModal === true ? hamBurger3 : hamBurger1H}
-                        animate="animate"
+                        variants={
+                            showModal === true
+                                ? ctx.hamBurger3
+                                : ctx.hamBurgerPostAnimate
+                        }
+                        animate='animate'
                     ></motion.div>
                 </div>
             </AnimatePresence>
@@ -123,7 +49,7 @@ const Menu = () => {
                 {showModal && (
                     <motion.div
                         className={classes.navBar}
-                        variants={navBarVarients}
+                        variants={ctx.navBarVarients}
                         initial='initial'
                         animate='animate'
                         exit='initial'
@@ -154,7 +80,7 @@ const Menu = () => {
                     <motion.div
                         className={classes.backDrop}
                         onClick={HmenuHandler}
-                        variants={backDropVar}
+                        variants={ctx.backDropVar}
                         initial='initial'
                         animate='animate'
                         exit='initial'
