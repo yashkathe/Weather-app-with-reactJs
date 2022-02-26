@@ -19,6 +19,8 @@ const Menu = () => {
     return (
         <React.Fragment>
             <AnimatePresence>
+                {/* hamburger menu  */}
+
                 <div onClick={HmenuHandler}>
                     <motion.div
                         className={classes.HMenu}
@@ -27,12 +29,14 @@ const Menu = () => {
                                 ? ctx.hamBurger1
                                 : ctx.hamBurgerPostAnimate
                         }
+                        style={showModal === true ? ctx.hamBurgerStyle: ""}
                         animate='animate'
                     ></motion.div>
                     <motion.div
                         className={classes.HMenu}
                         variants={ctx.hamBurger2}
                         animate={showModal === true ? "animate" : "preState"}
+                        style={showModal === true ? ctx.hamBurgerStyle: ""}
                     ></motion.div>
                     <motion.div
                         className={classes.HMenu}
@@ -41,11 +45,14 @@ const Menu = () => {
                                 ? ctx.hamBurger3
                                 : ctx.hamBurgerPostAnimate
                         }
+                        style={showModal === true ? ctx.hamBurgerStyle: ""}
                         animate='animate'
                     ></motion.div>
                 </div>
             </AnimatePresence>
             <AnimatePresence>
+                {/* modal elements */}
+
                 {showModal && (
                     <motion.div
                         className={classes.navBar}
@@ -54,22 +61,35 @@ const Menu = () => {
                         animate='animate'
                         exit='initial'
                     >
-                        <NavLink to='/' activeClassName={classes.active} exact>
-                            <button>Home</button>
-                        </NavLink>
-                        <NavLink
-                            to='/settings'
-                            activeClassName={classes.active}
-                        >
-                            <button>Settings</button>
-                        </NavLink>
-                        <a
-                            href='https://github.com/yashkathe/Weather-app-with-reactJs'
-                            rel='noreferrer noopener'
-                            target='_blank'
-                        >
-                            Source Code
-                        </a>
+                        <div className={classes.Menu__element}>
+                            <NavLink
+                                to='/'
+                                activeClassName={classes.active}
+                                exact
+                            >
+                                <button className={classes.Menu__innerElement}>Home</button>
+                            </NavLink>
+                        </div>
+
+                        <div className={classes.Menu__element}>
+                            <NavLink
+                                to='/settings'
+                                activeClassName={classes.active}
+                            >
+                                <button className={classes.Menu__innerElement}>Settings</button>
+                            </NavLink>
+                        </div>
+
+                        <div className={classes.Menu__element}>
+                            <a
+                                href='https://github.com/yashkathe/Weather-app-with-reactJs'
+                                rel='noreferrer noopener'
+                                target='_blank'
+                                className={classes.Menu__innerElement}
+                            >
+                                Source Code
+                            </a>
+                        </div>
                     </motion.div>
                 )}
             </AnimatePresence>

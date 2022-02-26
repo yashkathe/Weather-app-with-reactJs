@@ -6,3 +6,18 @@ body {
   color: rgb(211,211,211);
 }
 
+button,
+input[type="submit"],
+input[type="reset"] {
+    background: none;
+    color: inherit;
+    border: none;
+    font: inherit;
+    cursor: pointer;
+    outline: inherit;
+}
+
+a, a:hover, a:focus, a:active {
+  text-decoration: none;
+  color: inherit;
+}

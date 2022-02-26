@@ -56,6 +56,7 @@ const VarientsContext = React.createContext({
             },
         },
     },
+
     hamBurger1: {
         animate: {
             rotate: -45,
@@ -110,6 +111,10 @@ const VarientsContext = React.createContext({
             },
         },
     },
+
+    hamBurgerStyle: {
+        backgroundColor:"#c9b232"
+    }
 });
 
 export default VarientsContext;
